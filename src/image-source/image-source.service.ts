@@ -13,7 +13,6 @@ export class ImageSourceService {
     const { source_id, source_media_id, chapter_id } = imageSource;
     console.log('Hello Yuu - manga - Image Source!', imageSource);
     if (!source_id) {
-      // handle error 400 with message Missing "required query parameters"
       throw new UnprocessableEntityException({
         status: HttpStatus.BAD_REQUEST,
         errors: {
