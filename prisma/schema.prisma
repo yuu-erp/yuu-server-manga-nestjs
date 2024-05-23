@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model chapters {
+  sourceconnectionid String?
+  name               String?
+  sourcechapterid    String  @id
+  sourceid           String?
+  sourcemediaid      String?
+  slug               String?
+  section            String?
+}
+
+model manga_source {
+  mediaid       String?
+  sourcemediaid String?
+  sourceid      String?
+  id            String  @id
+}

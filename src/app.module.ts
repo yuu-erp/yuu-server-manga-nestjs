@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import appConfig from '@/config/app.config';
-import { ImageSourceModule } from '@/image-source/image-source.module';
+import { MangaModule } from './api/manga/manga.module';
+import { ImageSourceModule } from './api/image-source/image-source.module';
+import { PrismaModule } from './services/prismaService/prisma.module';
 
 @Module({
   imports: [
@@ -10,7 +12,9 @@ import { ImageSourceModule } from '@/image-source/image-source.module';
       load: [appConfig],
       envFilePath: ['.env'],
     }),
+    PrismaModule,
     ImageSourceModule,
+    MangaModule,
   ],
   controllers: [],
   providers: [],
