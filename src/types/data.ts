@@ -1,3 +1,5 @@
+import { Request } from 'express';
+
 export interface Proxy {
   ignoreReqHeaders?: boolean;
   followRedirect?: boolean;

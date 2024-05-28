@@ -4,6 +4,7 @@ import appConfig from '@/config/app.config';
 import { MangaModule } from './api/manga/manga.module';
 import { ImageSourceModule } from './api/image-source/image-source.module';
 import { PrismaModule } from './services/prismaService/prisma.module';
+import NettruyenScraper from './scrapers/manga/nettruyencc';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PrismaModule } from './services/prismaService/prisma.module';
     PrismaModule,
     ImageSourceModule,
     MangaModule,
+    NettruyenScraper,
   ],
   controllers: [],
   providers: [],
